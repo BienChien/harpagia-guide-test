@@ -2453,13 +2453,7 @@
     (function () {
         function updateEmbedZoom() {
             if (window.self !== window.top) {
-                if (screen.width <= 680) {
-                    document.documentElement.style.zoom = '0.70';
-                    document.querySelector('.sidebar').style.height = (100 / 0.70).toFixed(4) + 'vh';
-                } else {
-                    document.documentElement.style.zoom = '';
-                    document.querySelector('.sidebar').style.height = '';
-                }
+                document.documentElement.style.zoom = screen.width <= 680 ? '' : '0.70';
             }
         }
         updateEmbedZoom();
