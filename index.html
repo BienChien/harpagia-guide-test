@@ -767,7 +767,7 @@
               <div class="section-icon-wrap">
                   <img src="" data-embed="guidebg.png" class="section-icon" alt="">
               </div>
-              <h2>Harpagia Guide - Written & Published by BienChien and Atlas (1.1)</h2>
+              <h2>Harpagia Guide - Written & Published by BienChien and Atlas (1.2)</h2>
           <span class="section-chevron">&#8250;</span></div>
     <div class="section-teaser">An opinionated guide to Harpagia — click any section title or sidebar tab to expand it.</div>
     <div class="section-body">
@@ -2458,6 +2458,9 @@
                     content.style.zoom = '0.70';
                     content.style.width = (100 / 0.70).toFixed(4) + '%';
                     document.body.style.overflowX = 'hidden';
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.style.zoom = '0.70';
+                    sidebar.style.height = (100 / 0.70).toFixed(4) + 'vh';
                 } else {
                     document.documentElement.style.zoom = '0.70';
                 }
