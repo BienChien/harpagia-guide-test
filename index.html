@@ -2453,7 +2453,14 @@
     (function () {
         function updateEmbedZoom() {
             if (window.self !== window.top) {
-                document.documentElement.style.zoom = screen.width <= 680 ? '' : '0.70';
+                if (screen.width <= 680) {
+                    const content = document.querySelector('.content');
+                    content.style.zoom = '0.70';
+                    content.style.width = (100 / 0.70).toFixed(4) + '%';
+                    document.body.style.overflowX = 'hidden';
+                } else {
+                    document.documentElement.style.zoom = '0.70';
+                }
             }
         }
         updateEmbedZoom();
