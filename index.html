@@ -4,8 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.70">
-    <script>if(window.self!==window.top&&!window.matchMedia('(max-width:768px)').matches){document.querySelector('meta[name="viewport"]').content='width=device-width,initial-scale=1.0';}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harpagia Codex</title>
 
     <style>
@@ -618,7 +617,7 @@
 
     <!-- SIDEBAR / TABLE OF CONTENTS -->
     <div class="sidebar">
-      <div class="sidebar-title">Harpagia Guide <span style="font-size:14px;opacity:0.6;">(v1.1)</span></div>
+      <div class="sidebar-title">Harpagia Guide <span style="font-size:14px;opacity:0.6;">(v1.2)</span></div>
 
       <div class="sidebar-icon-wrap">
           <img src="" data-embed="harphubicon.png" class="sidebar-icon" alt="">
@@ -2450,25 +2449,20 @@
         }, 300);
     }
 
-    // When embedded in HarpHub, initial-scale is ignored — apply zoom directly
     (function () {
-        function updateEmbedZoom() {
-            if (window.self !== window.top) {
-                if (screen.width <= 680) {
-                    const content = document.querySelector('.content');
-                    content.style.zoom = '0.70';
-                    content.style.width = (100 / 0.70).toFixed(4) + '%';
-                    document.body.style.overflowX = 'hidden';
-                    const sidebar = document.querySelector('.sidebar');
-                    sidebar.style.zoom = '0.70';
-                    sidebar.style.height = (100 / 0.70).toFixed(4) + 'vh';
-                } else {
-                    document.documentElement.style.zoom = '0.70';
-                }
+        function updateMobileZoom() {
+            if (screen.width <= 680) {
+                const content = document.querySelector('.content');
+                content.style.zoom = '0.70';
+                content.style.width = (100 / 0.70).toFixed(4) + '%';
+                document.body.style.overflowX = 'hidden';
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.zoom = '0.70';
+                sidebar.style.height = (100 / 0.70).toFixed(4) + 'vh';
             }
         }
-        updateEmbedZoom();
-        window.addEventListener('resize', updateEmbedZoom);
+        updateMobileZoom();
+        window.addEventListener('resize', updateMobileZoom);
     })();
     </script>
 
