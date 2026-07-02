@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#09090d">
     <title>Harpagia Codex</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -26,14 +23,6 @@
           /* makes text feel crisper */
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-
-          /* keep mobile browsers (and iframes) from inflating text */
-          -webkit-text-size-adjust: 100%;
-          text-size-adjust: 100%;
-      }
-
-      html {
-          scroll-behavior: smooth;
       }
 
       /* SIDEBAR */
@@ -42,7 +31,6 @@
           width: 230px;
           background: linear-gradient(180deg, rgba(20, 13, 31, 0.72) 0%, rgba(15, 10, 24, 0.74) 100%);
           height: 100vh;
-          height: 100dvh; /* mobile: account for dynamic browser toolbars */
           position: fixed;
           padding: 12px;
           box-sizing: border-box;
@@ -106,7 +94,7 @@
 
       /* MAIN CONTENT */
       .content {
-          margin-left: 230px;
+          margin-left: 215px;
           padding: 40px;
           max-width: 1150px;
       }
@@ -147,7 +135,6 @@
           color: #d8cfe8;
           line-height: 1.82;
           margin-bottom: 1.1em;
-          overflow-wrap: break-word;
       }
 
       .section strong {
@@ -159,7 +146,6 @@
           text-decoration: none;
           border-bottom: 1px solid rgba(201, 169, 245, 0.3);
           transition: color 0.15s ease, border-color 0.15s ease;
-          overflow-wrap: anywhere; /* long URLs (Links section) on narrow screens */
       }
 
       .section a:hover {
@@ -623,25 +609,6 @@
     .search-box.mobile-open {
         display: block;
     }
-    body {
-        overflow-x: hidden;
-    }
-}
-
-/* Very narrow screens / iframes: stack side-by-side layouts */
-@media (max-width: 560px) {
-    .boss-entry {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .boss-desc {
-        padding-top: 0;
-    }
-    .search-result {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
 }
 </style>
 </head>
@@ -764,14 +731,14 @@
       </div>
     </div>
 
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()" aria-hidden="true"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
     <!-- MAIN CONTENT -->
     <div class="content">
       <div class="search-wrap">
           <div class="mobile-bar">
-              <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()" aria-label="Open navigation menu">☰</button>
-              <button class="search-btn" id="searchBtn" onclick="toggleMobileSearch()" aria-label="Show or hide search">🔍</button>
+              <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()">☰</button>
+              <button class="search-btn" id="searchBtn" onclick="toggleMobileSearch()">🔍</button>
           </div>
           <div class="search-box" id="searchBox">
               <input
@@ -780,19 +747,18 @@
                   type="text"
                   placeholder="Search the guide..."
                   autocomplete="off"
-                  aria-label="Search the guide"
               />
 
               <div id="searchResults" class="search-results"></div>
 
               <div class="search-footer">
                   <div id="searchNav" class="search-nav" style="display:none;">
-                      <button id="searchPrev" class="search-nav-btn" aria-label="Previous result">&#8592;</button>
+                      <button id="searchPrev" class="search-nav-btn">&#8592;</button>
                       <span id="searchCounter" class="search-counter">1 of 1</span>
-                      <button id="searchNext" class="search-nav-btn" aria-label="Next result">&#8594;</button>
+                      <button id="searchNext" class="search-nav-btn">&#8594;</button>
                   </div>
                   <div class="search-toggle-note">Open / Close search results</div>
-                  <button id="searchToggle" class="search-toggle-btn" aria-label="Open or close search results">⌄</button>
+                  <div id="searchToggle" class="search-toggle-btn">⌄</div>
               </div>
           </div>
       </div>
@@ -1074,8 +1040,8 @@
         MUST
     </strong>
      still be active at the time of logging in, or it won’t take any effect at all. If you have a 300min aura, and sign back in at 305 mins, the entire aura will take no effect, however, if you log in at 299 min, it will have taken effect and doubled resources or XP for the entire time. Auras do not work for banked offline actions.
-</p>
-
+</p><p>
+        
     <div class="collapse-bar bottom"><button class="collapse-btn">Collapse &#8593;</button></div>
     </div></div>
 
@@ -1146,7 +1112,8 @@
     </strong>
      Affix on a soulstone, which can boost first-attack damage by up to 160%. By using Ult.Pwr/Keen Eye, you can increase dmg further on this attack, and almost always guarantee a crit strike, resulting in one-shotting most non-boss enemies in the game, giving ridiculous KPH rates and extraordinary MP/Hr levels. Aside from having a PEStrike build, Ult.Pwr/Keen Eye aren’t very effective abilities.
 </p>
-
+<p></p>
+        
     <div class="collapse-bar bottom"><button class="collapse-btn">Collapse &#8593;</button></div>
     </div></div>
 
@@ -1237,7 +1204,7 @@
     <div class="boss-figure">
         <div class="boss-name">Dravok</div>
         <div class="boss-image-frame">
-            <img src="" data-embed="dravokbg.png" class="boss-image pixel-sprite" loading="lazy" decoding="async" alt="Dravok">
+            <img src="" data-embed="dravokbg.png" class="boss-image pixel-sprite" alt="Dravok">
         </div>
     </div>
     <div class="boss-desc">
@@ -1248,7 +1215,7 @@
     <div class="boss-figure">
         <div class="boss-name">Xerathin</div>
         <div class="boss-image-frame">
-            <img src="" data-embed="xerathinbg.png" class="boss-image pixel-sprite" loading="lazy" decoding="async" alt="Xerathin">
+            <img src="" data-embed="xerathinbg.png" class="boss-image pixel-sprite" alt="Xerathin">
         </div>
     </div>
     <div class="boss-desc">
@@ -1259,7 +1226,7 @@
     <div class="boss-figure">
         <div class="boss-name">Anubis</div>
         <div class="boss-image-frame">
-            <img src="" data-embed="anubisbg.png" class="boss-image pixel-sprite" loading="lazy" decoding="async" alt="Anubis">
+            <img src="" data-embed="anubisbg.png" class="boss-image pixel-sprite" alt="Anubis">
         </div>
     </div>
     <div class="boss-desc">
@@ -1270,7 +1237,7 @@
     <div class="boss-figure">
         <div class="boss-name">Treanth</div>
         <div class="boss-image-frame">
-            <img src="" data-embed="treanthbg.png" class="boss-image pixel-sprite" loading="lazy" decoding="async" alt="Treanth">
+            <img src="" data-embed="treanthbg.png" class="boss-image pixel-sprite" alt="Treanth">
         </div>
     </div>
     <div class="boss-desc">
@@ -1281,7 +1248,7 @@
     <div class="boss-figure">
         <div class="boss-name">Vorrath</div>
         <div class="boss-image-frame">
-            <img src="" data-embed="vorrathbg.png" class="boss-image pixel-sprite" loading="lazy" decoding="async" alt="Vorrath">
+            <img src="" data-embed="vorrathbg.png" class="boss-image pixel-sprite" alt="Vorrath">
         </div>
     </div>
     <div class="boss-desc">
@@ -1346,11 +1313,14 @@
     </strong>
      - Play Diamond mine on either 3 Diamonds (collect all) or 11 Diamonds (collect 7) to tick this one off, should yield well over 1B tix at 100m gold bet.
 </p>
+<p>
+</p>
 <h3>Blessings</h3>
 <p>
     Achievements grant gems based on their tier (1 per tier level) and passive bonuses as you unlock them and rank up your Achievement Bonuses level. Once you reach the "Medium" tier, you’ll unlock blessings. Blessings cost 1,000 gems each, and grant various bonuses to different aspects of the game. Each blessing, once purchased, becomes permanently unlocked but must be equipped to be active. Swapping from one blessing to a different one costs 50 gems, but is lowered to 25 gems once the second blessing slot is unlocked (Hard Tier). All the blessings are useful, but likely the first 2 you’ll buy are Warlord and Sage, but it depends on preference.
 </p>
-
+<p></p>
+        
     <div class="collapse-bar bottom"><button class="collapse-btn">Collapse &#8593;</button></div>
     </div></div>
 
@@ -1544,7 +1514,7 @@
 <p>
     Rex is a weekly world boss encounter built around a rotating restriction system. Every week, a randomized set of limitations is applied that determines which equipment you're allowed to use in the fight. No two weeks play out the same way, so build flexibility is key here. Don't get too attached to one loadout.
 </p>
-<img src="" data-embed="rexrestrictions.png" style="width: 256px; max-width: 100%; border-radius: 12px; margin: 8px 0;" loading="lazy" decoding="async" alt="Rex weekly restrictions">
+<img src="" data-embed="rexrestrictions.png" style="width: 256px; max-width: 100%; border-radius: 12px; margin: 8px 0;" alt="Rex weekly restrictions">
 <p>
     You can challenge Rex twice per day. The boss resets on a weekly cycle and is not designed to be killed. Your goal is simply to push your performance as high as possible relative to other players. Worth noting: Rex battles go offline during the final hour of each week while the servers tally results, so don't leave your runs to the last minute. Rex battles also require a live internet connection, and you'll need to watch a short ad before each attempt unless you own the Remove Ads purchase. Once a couple more weeks have passed, I'll share deeper insight into special Rex strategies and builds depending on the weekly restrictions here.
 </p>
@@ -1553,16 +1523,16 @@
     Your Contribution Score is determined by 2 things: how much damage you deal per run, and how consistently you show up throughout the week. Strong individual performances matter, but so does showing up regularly. There's a weighted rewards system in place to keep the leaderboard competitive and prevent a handful of high-end players from locking out rewards entirely, so even mid-game players have a real shot at prizes if they're putting in the runs.
 </p>
 <h3>Rewards</h3>
-<img src="" data-embed="elementalbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" loading="lazy" decoding="async" alt="Rex reward pools">
-<img src="" data-embed="rexclawbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" loading="lazy" decoding="async" alt="Rex's Claw">
+<img src="" data-embed="elementalbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" alt="Rex reward pools">
+<img src="" data-embed="rexclawbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" alt="Rex's Claw">
 <p>
-    At the end of each week, 22 players receive special prizes split across 2 separate reward pools. The players who land in the top 10 contribution get placed equal to their placement on the contribution rewards for rune chest keys. first placement will get 100 keys, 2nd placement 70 keys, etc. 10 random players get rewards for participation. However, this has no impact on the drops for Rex's Claw or Elemental Blade. Those still drop *randomly* with the mega rare in the contribution category being weighted towards the top contributors.
+    At the end of each week, 20 players receive special prizes split across 2 separate reward pools. The players who land in the top 10 contribution get split and placed randomly amongst the top 10 positions for either contribution or participation. This means thet guaranteed to get one of the bonus rewards for Rune Keys. However, this has no impact on the drops for Rex's Claw or Elemental Blade. Those still drop fully randomly, as far as I'm aware.
 </p>
 <p>
-    <strong>Contribution Pool:</strong> All 10 top contributors are guaranteed a placement in 10 of the available slots in this pool, equal to their contribution placement. A higher score improves your odds for the mega rare, but anyone in the top 100 has a shot. This is where Rex's Claw or the Elemental Blade will drop, depending on which pool holds which item that week (it rotates).
+    <strong>Contribution Pool:</strong> 5 of the top 10 contributors are guaranteed a placement in 10 of the available slots in this pool. The rest of the slots will be filled by any of the top 100 contributors after that, randomly. A higher score improves your odds, but anyone in the top 100 has a shot. This is where Rex's Claw or the Elemental Blade will drop, depending on which pool holds which item that week (it rotates).
 </p>
 <p>
-    <strong>Participation Pool:</strong> Every player who completes at least 1 Rex fight during the week is automatically entered into a draw with equal odds for all 10 slots. One attempt is all it takes to qualify. The other Mega Rare item (whichever isn't in the Contribution pool that week) is up for grabs here, with a completely random drop rate between all participators.
+    <strong>Participation Pool:</strong> 5 of the top 10 contributors are guaranteed a placement in 10 of the available slots in this pool. Every player who completes at least 1 Rex fight during the week is automatically entered into a separate draw with equal odds for the other 5 slots. One attempt is all it takes to qualify. The other Mega Rare item (whichever isn't in the Contribution pool that week) is up for grabs here.
 </p>
 <p>
     <strong>Consolation Reward:</strong> If you participated but didn't land a top prize, you still walk away with 5 Rune Chest Keys.
@@ -1572,12 +1542,12 @@
     Mega Rares are the 2 ultra-rare items that can be won from Rex each week. Each one drops into one of the 2 reward pools, and which pool holds which item rotates weekly, so it's worth keeping an eye on that before deciding whether to push for a top 100 score or just show up for the participation draw.
 </p>
 <h3>Elemental Blade</h3>
-<img src="" data-embed="elementalbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" loading="lazy" decoding="async" alt="Elemental Blade">
+<img src="" data-embed="elementalbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" alt="Elemental Blade">
 <p>
     A sword-type weapon. At level 1, it sits at <strong>320 Power</strong> with a <strong>0.5% chance to inflict a random status effect per hit</strong>, scaling up to <strong>548 Power</strong> and a <strong>10% proc chance</strong> at level 20. It's worth noting that as a sword, it doesn't pair with Viridian armor's axe damage bonus, so it works only with abyssal armor (Yay! Big DPS + Def build). Its status effect proc is a unique mechanic that could open up some interesting build options, particularly once the proc rate is better understood at high levels, and runes are explored deeper in combination with it.
 </p>
 <h3>Rex's Claw</h3>
-<img src="" data-embed="rexclawbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" loading="lazy" decoding="async" alt="Rex's Claw">
+<img src="" data-embed="rexclawbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" alt="Rex's Claw">
 <p>
     A trinket. Full details are covered in the <a href="#rexs-claw-heading" onclick="openSectionAndHighlight('section17', 'rexs-claw-heading')">Trinkets section</a>.
 </p>
@@ -1668,7 +1638,7 @@
     <div class="section-teaser">An overview of amulets, how to obtain them, and which ones are worth prioritizing.</div>
     <div class="section-body">
 <h3>Basic Amulets</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0;">
+<div style="display: flex; gap: 10px; margin: 8px 0;">
     <img src="" data-embed="pwramuletbg.png" style="width: 96px; border-radius: 8px;" alt="Power Amulet">
     <img src="" data-embed="spdamuletbg.png" style="width: 96px; border-radius: 8px;" alt="Speed Amulet">
     <img src="" data-embed="wepamuletbg.png" style="width: 96px; border-radius: 8px;" alt="Weaponry Amulet">
@@ -1678,7 +1648,7 @@
     Amulets are one of the earliest big combat-boosting items in the game, coming online before sigils and soulstones and offering a very solid stat bump right away. They drop from the Frozen Wastelands as unique items, and come in 4 types: Power, Speed, Weaponry, and Defence. Each one boosts its respective stat by <strong>1% per level</strong>, up to a maximum of <strong>20%</strong> at level 20. You'll eventually want to get one of each to level 20, but for the majority of battle, you'll only really need the <strong>Power amulet</strong> equipped. Power offers a significantly higher DPS boost than Weaponry or Speed, and Defence isn't super necessary at this stage of the game. Feel free to salvage any duplicate types you pick up, or sell them to other players on the discord.
 </p>
 <h3>Primordial Amulet</h3>
-<img src="" data-embed="primordialbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" loading="lazy" decoding="async" alt="Primordial Amulet">
+<img src="" data-embed="primordialbg.png" style="width: 96px; border-radius: 8px; margin: 8px 0;" alt="Primordial Amulet">
 <p>
     Once you have one of each base amulet at level 20, you can fuse them together into a Primordial Amulet for the cost of <strong>5 million amulet fragments</strong>. The primordial combines all 4 amulets into one, boosting Power, Weaponry, Speed, Defence, and HP, though at a reduced rate of <strong>0.7% per level</strong>. At max level 20, that works out to a <strong>14% boost to all 5 stats</strong>, which is an absolutely massive bonus. It's a genuinely late-game item and can be pretty hard to come by, but you can usually pick one up on the discord marketplace for around <strong>900-1,500 gems</strong>. Heavy investment, but one of the strongest items in the game.
 </p>
@@ -2189,12 +2159,6 @@
             return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         }
 
-        function escapeHTML(string) {
-            return string.replace(/[&<>"']/g, c => ({
-                "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-            })[c]);
-        }
-
         function getSectionTitle(section) {
             const h2 = section.querySelector("h2");
             return h2 ? h2.textContent.trim() : "Untitled Section";
@@ -2298,7 +2262,9 @@
             const target = mark || el;
 
             const parentSection = el.closest(".section");
-            if (parentSection) setSectionCollapsed(parentSection, false);
+            if (parentSection && parentSection.classList.contains("collapsed")) {
+                parentSection.classList.remove("collapsed");
+            }
 
             target.scrollIntoView({ behavior: "smooth", block: "center" });
             target.classList.add("search-hit-flash");
@@ -2321,8 +2287,7 @@
 
             if (!query) return;
 
-            // regex runs against HTML-escaped snippets, so escape the query the same way
-            const safeRegex = new RegExp("(" + escapeRegExp(escapeHTML(query)) + ")", "ig");
+            const safeRegex = new RegExp("(" + escapeRegExp(query) + ")", "ig");
             let resultId = 0;
 
             sections.forEach(section => {
@@ -2341,8 +2306,8 @@
                     const row = document.createElement("div");
                     row.className = "search-result";
                     row.innerHTML = `
-                        <div class="search-result-section">${escapeHTML(sectionTitle)}</div>
-                        <div class="search-result-snippet">${escapeHTML(snippet).replace(safeRegex, "<mark>$1</mark>")}</div>
+                        <div class="search-result-section">${sectionTitle}</div>
+                        <div class="search-result-snippet">${snippet.replace(safeRegex, "<mark>$1</mark>")}</div>
                     `;
 
                     row.addEventListener("click", function () {
@@ -2373,11 +2338,7 @@
             if (e.key === "ArrowUp")   { e.preventDefault(); activateResult(currentResultIndex - 1); }
         });
 
-        let searchDebounce;
-        input.addEventListener("input", function () {
-            clearTimeout(searchDebounce);
-            searchDebounce = setTimeout(runSearch, 120);
-        });
+        input.addEventListener("input", runSearch);
 
         // Active sidebar link tracking
         const sidebarLinks = Array.from(document.querySelectorAll(".sidebar a[href^='#']"));
@@ -2409,21 +2370,11 @@
 
         sectionEls.forEach(el => { if (el) observer.observe(el); });
 
-        // Accordion toggle (keyboard accessible)
+        // Accordion toggle
         document.querySelectorAll(".section-header").forEach(header => {
-            const section = header.closest(".section");
-            header.setAttribute("role", "button");
-            header.setAttribute("tabindex", "0");
-            header.setAttribute("aria-expanded", String(!section.classList.contains("collapsed")));
             header.addEventListener("click", function () {
-                const s = this.closest(".section");
-                setSectionCollapsed(s, !s.classList.contains("collapsed"));
-            });
-            header.addEventListener("keydown", function (e) {
-                if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    this.click();
-                }
+                const section = this.closest(".section");
+                section.classList.toggle("collapsed");
             });
         });
 
@@ -2431,16 +2382,16 @@
             btn.addEventListener("click", function (e) {
                 e.stopPropagation();
                 const section = this.closest(".section");
-                setSectionCollapsed(section, true);
+                section.classList.add("collapsed");
                 section.scrollIntoView({ behavior: "smooth", block: "start" });
             });
         });
 
         // Expand section on direct hash link (e.g. #section13)
         if (window.location.hash) {
-            const target = document.getElementById(window.location.hash.slice(1));
+            const target = document.querySelector(window.location.hash);
             if (target && target.classList.contains("section")) {
-                setSectionCollapsed(target, false);
+                target.classList.remove("collapsed");
                 setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
             }
         }
@@ -2450,20 +2401,13 @@
             link.addEventListener("click", function (e) {
                 const targetId = this.getAttribute("href").slice(1);
                 const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    setSectionCollapsed(targetSection, false);
+                if (targetSection && targetSection.classList.contains("collapsed")) {
+                    targetSection.classList.remove("collapsed");
                 }
             });
         });
 
     });
-
-    // Single place that opens/closes a section so aria-expanded stays in sync
-    function setSectionCollapsed(section, collapsed) {
-        section.classList.toggle("collapsed", collapsed);
-        const header = section.querySelector(".section-header");
-        if (header) header.setAttribute("aria-expanded", String(!collapsed));
-    }
 
     function toggleSidebar() {
         document.querySelector('.sidebar').classList.toggle('mobile-open');
@@ -2492,7 +2436,7 @@
 
     function openSectionAndHighlight(sectionId, headingId) {
         const section = document.getElementById(sectionId);
-        if (section) setSectionCollapsed(section, false);
+        if (section) section.classList.remove("collapsed");
         setTimeout(function () {
             const heading = document.getElementById(headingId);
             if (heading) {
@@ -2505,31 +2449,16 @@
         }, 300);
     }
 
-    // Close mobile sidebar / search with Escape
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            document.querySelector('.sidebar').classList.remove('mobile-open');
-            document.getElementById('sidebarOverlay').classList.remove('mobile-open');
-        }
-    });
-
     (function () {
-        // window.innerWidth (not screen.width) so narrow iframes and window
-        // resizes match the CSS @media (max-width: 680px) breakpoint
-        const heightUnit = (window.CSS && CSS.supports('height', '100dvh')) ? 'dvh' : 'vh';
         function updateMobileZoom() {
-            const content = document.querySelector('.content');
-            const sidebar = document.querySelector('.sidebar');
-            if (window.innerWidth <= 680) {
+            if (screen.width <= 680) {
+                const content = document.querySelector('.content');
                 content.style.zoom = '0.70';
                 content.style.width = (100 / 0.70).toFixed(4) + '%';
+                document.body.style.overflowX = 'hidden';
+                const sidebar = document.querySelector('.sidebar');
                 sidebar.style.zoom = '0.70';
-                sidebar.style.height = (100 / 0.70).toFixed(4) + heightUnit;
-            } else {
-                content.style.zoom = '';
-                content.style.width = '';
-                sidebar.style.zoom = '';
-                sidebar.style.height = '';
+                sidebar.style.height = (100 / 0.70).toFixed(4) + 'vh';
             }
         }
         updateMobileZoom();
